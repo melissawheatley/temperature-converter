@@ -19,15 +19,15 @@
     <div class="radioRight justify-content-start">
         <div class="form-check form-check-inline">
             <label class="form-check-label" for="fahrenheitCheck & celsiusCheck"> Convert to:&nbsp;</label>
-            <input class="form-check-input" type="radio" id="fahrenheitCheck" value="fahrenheit">
+            <input class="form-check-input" name="tempUnit" type="radio" id="fahrenheitCheck" value="fahrenheit">
             <label class="form-check-label" for="Fahrenheit">Fahrenheit</label>
         </div>
         <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="celsiusCheck" value="celsius" checked>
+                <input class="form-check-input" name="tempUnit" type="radio" id="celsiusCheck" value="celsius" checked>
                 <label class="form-check-label" for="Celsius">Celsius</label>
         </div>
         <div class="ml-auto">
-            <button type="submit" class="btn btn-primary mb-2">Convert</button>
+            <button id="convertBtn" type="submit" class="btn btn-primary mb-2">Convert</button>
         </div>
     </div>
     <div id="convertedTemp"></div>
