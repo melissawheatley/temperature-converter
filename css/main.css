@@ -14,3 +14,15 @@ body{
 .radioRight {
     display: flex; 
 }
+
+.green{
+    color: green;
+}
+
+.hot{
+    color: red;
+}
+
+.cold{
+    color: blue;
+}
