@@ -27,18 +27,27 @@ function pressEnter(clickEvent){
         determineConverter(clickEvent);
     }
 }
-// Add an event handler to the input field that checks if the user pressed the enter key, and if that happens, perform the conversion.
 
 function toFahrenheit () {
     var fahrTemp = (input.value * 1.8) + 32;
     console.log(fahrTemp);
-    output.innerHTML = `${fahrTemp.toFixed()} &deg; F`
+    if(fahrTemp <= 32){
+        output.innerHTML = `<hr /><p>${input.value}&deg; C converts to: </p><h2 class="cold">${fahrTemp.toFixed()} &deg; F</h2>`
+    }else if(fahrTemp >= 90){
+        output.innerHTML = `<hr /><p>${input.value}&deg; C converts to: </p><h2 class="hot">${fahrTemp.toFixed()} &deg; F</h2>`
+    }else{
+        output.innerHTML = `<hr /><p>${input.value}&deg; C converts to: </p><h2 class="green">${fahrTemp.toFixed()} &deg; F</h2>`}
 }
 
 function toCelsius () {
     var celsiusTemp = (input.value - 32) * (5/9);
     console.log(celsiusTemp);
-    output.innerHTML = `<p>${input.value}&deg; F converts to: </p><h2> ${celsiusTemp.toFixed()} &deg; C</h2>`
+    if(celsiusTemp <= 0){
+        output.innerHTML = `<hr /><p>${input.value}&deg; F converts to: </p><h2 class="cold">${celsiusTemp.toFixed()} &deg; C</h2>`
+    }else if(celsiusTemp >= 32){
+        output.innerHTML = `<hr /><p>${input.value}&deg; F converts to: </p><h2 class="hot">${celsiusTemp.toFixed()} &deg; C</h2>`
+    }else{
+        output.innerHTML = `<hr /><p>${input.value}&deg; F converts to: </p><h2 class="green">${celsiusTemp.toFixed()} &deg; C</h2>`}
 }
 
 function determineConverter (clickEvent) {
@@ -51,8 +60,3 @@ function determineConverter (clickEvent) {
     output.innerHTML = "error";    
   }
 }
-
-
-// If the temperature is greater than 90F/32C the color of the converted temperature should be red.
-// If the temperature is less than 32F/0C the color of the converted temperature should be blue.
-// For any other temperature, the color should be green.
